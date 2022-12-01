@@ -54,7 +54,7 @@ type TransferTxResult struct {
 	FromAccount Accounts  `json:"from_account"`
 	ToAccount   Accounts  `json:"to_account"`
 	FromEntry   Entries   `json:"from_entry"`
-	ToENtry     Entries   `json:"to_entry"`
+	ToEntry     Entries   `json:"to_entry"`
 }
 
 // TransferTx performs a money transfer from one account to another account
@@ -83,7 +83,7 @@ func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (Trans
 			return err
 		}
 
-		result.ToENtry, err = q.CreateEntry(ctx, CreateEntryParams{
+		result.ToEntry, err = q.CreateEntry(ctx, CreateEntryParams{
 			AccountID: arg.ToAccountID,
 			Amount: arg.Amount,
 		})
