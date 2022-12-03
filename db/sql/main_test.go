@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	_ "github.com/lib/pq"
-	"github.com/ndihey27/banking-app/utils"
+	"github.com/nidhey27/banking-app/utils"
 	// "golang.org/x/tools/godoc/util"
 )
 

@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ndihey27/banking-app/db/sql"
+	"github.com/nidhey27/banking-app/db/sql"
 )
 
 // Server serves to HTTP Request for our banking service

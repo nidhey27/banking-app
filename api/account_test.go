@@ -11,9 +11,9 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	mockdb "github.com/ndihey27/banking-app/db/mock"
-	db "github.com/ndihey27/banking-app/db/sql"
-	"github.com/ndihey27/banking-app/utils"
+	mockdb "github.com/nidhey27/banking-app/db/mock"
+	db "github.com/nidhey27/banking-app/db/sql"
+	"github.com/nidhey27/banking-app/utils"
 	"github.com/stretchr/testify/require"
 )
 

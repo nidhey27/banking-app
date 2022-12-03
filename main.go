@@ -5,9 +5,9 @@ import (
 	"log"
 
 	_ "github.com/lib/pq"
-	"github.com/ndihey27/banking-app/api"
-	db "github.com/ndihey27/banking-app/db/sql"
-	"github.com/ndihey27/banking-app/utils"
+	"github.com/nidhey27/banking-app/api"
+	db "github.com/nidhey27/banking-app/db/sql"
+	"github.com/nidhey27/banking-app/utils"
 )
 
 func main() {
