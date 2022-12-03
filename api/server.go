@@ -7,12 +7,12 @@ import (
 
 // Server serves to HTTP Request for our banking service
 type Server struct {
-	store  *sql.Store
+	store  sql.Store
 	router *gin.Engine
 }
 
 // NewServer creates a new Http server and setup routing
-func NewServer(store *sql.Store) *Server {
+func NewServer(store sql.Store) *Server {
 	server := &Server{store: store}
 	router := gin.Default()
 
