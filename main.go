@@ -7,16 +7,18 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/ndihey27/banking-app/api"
 	db "github.com/ndihey27/banking-app/db/sql"
-)
-
-const (
-	dbDriver      = "postgres"
-	dbSource      = "postgres://root:mypassword@localhost:5432/simple_bank?sslmode=disable"
-	serverAddress = "0.0.0.0:8080"
+	"github.com/ndihey27/banking-app/utils"
 )
 
 func main() {
-	conn, err := sql.Open(dbDriver, dbSource)
+
+	config, err := utils.LoadConfig(".")
+
+	if err != nil {
+		log.Fatal("Cannot Load Configuration: ", err)
+	}
+
+	conn, err := sql.Open(config.DBDriver, config.DBSource)
 
 	if err != nil {
 		log.Fatal("Error connecting to DB:", err)
@@ -25,5 +27,5 @@ func main() {
 	store := db.NewStore(conn)
 	server := api.NewServer(store)
 
-	err = server.Start(serverAddress)
+	err = server.Start(config.ServerAddress)
 }
